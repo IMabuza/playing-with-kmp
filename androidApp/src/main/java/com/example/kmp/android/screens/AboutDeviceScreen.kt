@@ -1,4 +1,4 @@
-package com.example.kmp.android
+package com.example.kmp.android.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
