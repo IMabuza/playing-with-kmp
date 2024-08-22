@@ -11,6 +11,7 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		FA183E6E2C77453B005AF829 /* ArticlesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA183E6D2C77453B005AF829 /* ArticlesScreen.swift */; };
 		FA6DD84E2C4D1FF800A26C7F /* AboutDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DD84D2C4D1FF800A26C7F /* AboutDeviceView.swift */; };
 		FA6DD8502C4D258700A26C7F /* AboutDeviceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DD84F2C4D258700A26C7F /* AboutDeviceScreen.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA183E6D2C77453B005AF829 /* ArticlesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesScreen.swift; sourceTree = "<group>"; };
 		FA6DD84D2C4D1FF800A26C7F /* AboutDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutDeviceView.swift; sourceTree = "<group>"; };
 		FA6DD84F2C4D258700A26C7F /* AboutDeviceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutDeviceScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,13 +80,12 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				FA183E6C2C77450F005AF829 /* Screens */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
-				FA6DD84D2C4D1FF800A26C7F /* AboutDeviceView.swift */,
-				FA6DD84F2C4D258700A26C7F /* AboutDeviceScreen.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -94,6 +95,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA183E6C2C77450F005AF829 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FA6DD84F2C4D258700A26C7F /* AboutDeviceScreen.swift */,
+				FA6DD84D2C4D1FF800A26C7F /* AboutDeviceView.swift */,
+				FA183E6D2C77453B005AF829 /* ArticlesScreen.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA183E6E2C77453B005AF829 /* ArticlesScreen.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				FA6DD8502C4D258700A26C7F /* AboutDeviceScreen.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
