@@ -9,13 +9,36 @@
 import SwiftUI
 import shared
 
+extension ArticlesScreen {
+    @MainActor
+    class ArticlesViewModelWrapper: ObservableObject{
+        let articlesViewModel : ArticlesViewModel
+        
+        init() {
+        articlesViewModel = ArticlesViewModel()
+            articlesState = articlesViewModel.articlesState.value
+        }
+        
+        @Published var articlesState: ArticlesState
+        
+        func startObserving(){
+            Task{
+                for await articlesS in articlesViewModel.articlesState{
+                    self.articlesState = articlesS
+                }
+            }
+        }
+    }
+}
+
 struct ArticlesScreen: View {
     @ObservedObject private(set) var viewModel: ArticlesViewModelWrapper
+
     
     var body: some View {
         VStack{
             AppBar()
-            if viewModel.articleState.isLoading {
+            if viewModel.articlesState.isLoading {
                 Loader()
             }
             
@@ -50,7 +73,7 @@ struct ArticleItemView: View {
     
     var body: some View{
         VStack(alignment: .leading, spacing: 8){
-            AsyncImage(url: URL(string: article.imageURL)){
+            AsyncImage(url: URL(string: article.imageUrl)){
                 phase in
                 if phase.image != nil{
                     phase.image!.resizable().aspectRatio(contentMode: .fit)
@@ -79,6 +102,6 @@ struct ErrorMessage: View {
     }
 }
 
-#Preview {
-    ArticlesScreen()
-}
+//#Preview {
+//    ArticlesScreen()
+//}

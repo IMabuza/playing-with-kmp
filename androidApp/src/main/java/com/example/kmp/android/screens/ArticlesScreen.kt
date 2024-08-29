@@ -10,8 +10,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -28,10 +32,10 @@ import com.example.kmp.articles.Article
 import com.example.kmp.articles.ArticlesViewModel
 
 @Composable
-fun ArticlesScreen(articlesViewModel: ArticlesViewModel){
+fun ArticlesScreen(articlesViewModel: ArticlesViewModel, onAboutButtonClick: () -> Unit){
     val articlesState = articlesViewModel.articlesState.collectAsState()
     Column {
-        AppBar()
+        AppBar(onAboutButtonClick)
         if(articlesState.value.isLoading)
             Loader()
         if(articlesState.value.error != null)
@@ -61,9 +65,13 @@ fun Loader() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun AppBar(){
+private fun AppBar(onAboutButtonClick: () -> Unit){
 
-            TopAppBar(title = { Text(text = "Artciles") })
+            TopAppBar(title = { Text(text = "Artciles")}, actions = {
+                IconButton(onClick = onAboutButtonClick) {
+                    Icon(imageVector = Icons.Outlined.Info, contentDescription = "About Device Button")
+                }
+            })
 
 }
 
