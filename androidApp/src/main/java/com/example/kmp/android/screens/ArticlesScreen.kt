@@ -30,9 +30,10 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.example.kmp.articles.Article
 import com.example.kmp.articles.ArticlesViewModel
+import org.koin.androidx.compose.getViewModel
 
 @Composable
-fun ArticlesScreen(articlesViewModel: ArticlesViewModel, onAboutButtonClick: () -> Unit){
+fun ArticlesScreen(articlesViewModel: ArticlesViewModel = getViewModel(), onAboutButtonClick: () -> Unit){
     val articlesState = articlesViewModel.articlesState.collectAsState()
     Column {
         AppBar(onAboutButtonClick)

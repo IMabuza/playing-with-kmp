@@ -15,25 +15,24 @@ import com.example.kmp.android.screens.Screens
 import com.example.kmp.articles.ArticlesViewModel
 
 @Composable
-fun AppScaffold(articlesViewModel: ArticlesViewModel){
+fun AppScaffold(){
     val navController = rememberNavController()
 
     Scaffold {
         AppNavHost(navController = navController, modifier = Modifier
             .fillMaxSize()
-            .padding(it),
-            articlesViewModel = articlesViewModel)
+            .padding(it),)
     }
 }
 
 @Composable
 fun AppNavHost(navController: NavHostController,
                modifier: Modifier,
-               articlesViewModel: ArticlesViewModel) {
+               ) {
     NavHost(navController = navController,
         startDestination = Screens.ARTICLES.route, modifier = modifier, ) {
         composable(Screens.ARTICLES.route){
-            ArticlesScreen(articlesViewModel = articlesViewModel, onAboutButtonClick = {
+            ArticlesScreen(onAboutButtonClick = {
                 navController.navigate(Screens.ABOUT_DEVICE.route)
             })
         }
